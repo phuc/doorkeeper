@@ -13,7 +13,7 @@ module Doorkeeper
     field :resource_owner_id, :type => Moped::BSON::ObjectId
     field :token, :type => String
     field :expires_in, :type => Integer
-    field :revoked_at, :type => DateTime
+    field :revoked_at, :type => Time
 
     index({ token: 1 }, { unique: true })
     index({ refresh_token: 1 }, { unique: true, sparse: true })
